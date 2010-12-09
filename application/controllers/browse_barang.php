@@ -1,8 +1,8 @@
 <?php
   
-  class Start_preshop extends Controller {
+  class Browse_barang extends Controller {
     
-    function Start_preshop(){
+    function Browse_barang(){
       parent::Controller();
       $this->load->helper('url');
       
@@ -10,11 +10,11 @@
     
     function index(){
       
-      $this->load->view('homepage');
+      $this->load->view('product_view');
       
           
     }
     
   }
 /* End of file welcome.php */
-/* Location: ./system/application/controllers/start_preshop.php */
+/* Location: ./system/application/controllers/browse_barang.php */
