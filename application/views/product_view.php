@@ -14,6 +14,15 @@
 <div id='container'>
   <div class='right'>
   <p>Disini bla bla bla bla.</p>
+  <p>blablablabala</p>
+  <p>blablablabala</p>
+  <p>blablablabala</p>
+  <p>blablablabala</p>
+  <p>blablablabala</p>
+  <p>blablablabala</p>
+  <p>blablablabala</p>
+  <p>blablablabala</p>
+  <p>blablablabala</p>
   </div>
   
     <div id="panel-frame">

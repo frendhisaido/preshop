@@ -16,14 +16,14 @@ $(document).ready(function()
       }
       else
       {
-        if(panel_width='675px')
+        if(panel_width='200px')
         {
           
         }
         else
         {
           panel.animate({left: parseInt(panel.css('left'),0) == 0 ?
-          +panel.outerWidth() : 0}).animate({width:"675px"},9000);
+          +panel.outerWidth() : 0}).animate({width:"200px"},100);
         }       
       }
       
@@ -37,7 +37,7 @@ $(document).ready(function()
     {
       var panel= $('.panel');
       panel.animate({left: parseInt(panel.css('left'),0) == 0 ?
-      +panel.outerWidth() :0}).animate({width:"340px"},500);
+      +panel.outerWidth() :0}).animate({width:"199px"},500);
       return false;
     });   
   

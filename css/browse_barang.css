@@ -29,7 +29,7 @@ a:hover {color:#cc0000}
 {
   float:left;
   background-color:#fff;
-  width:350px;
+  width:200px;
   min-height:300px;
   position:relative;
 }
@@ -54,8 +54,9 @@ a:hover {color:#cc0000}
 .panel
 {
   background-color:#f2f2f2; 
-  width:340px;
-  height:550px;
+  
+  width:199px;
+  height:650px;
   margin-top:40px;
   position:relative;
   position:absolute;
