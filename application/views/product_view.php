@@ -34,22 +34,16 @@
   
   
   <div class="left">
-  <div class="block" id="1">Mie Instant</div>
-  <div class="block" id="2">Minuman</div>
-  <div class="block" id="3">Sabun</div>
-  <div class="block" id="4">Mie Instant</div>
-  <div class="block" id="5">Mie Instant</div>
-  <div class="block" id="6">Mie Instant</div>
-  <div class="block" id="7">Mie Instant</div>
-  <div class="block" id="8">Mie Instant</div>
-  <div class="block" id="9">Mie Instant</div>
-  <div class="block" id="10">Mie Instant</div>
-  <div class="block" id="11">Mie Instant</div>
-  <div class="block" id="12">Mie Instant</div>
-  <div class="block" id="13">Mie Instant</div>
-  <div class="block" id="14">Mie Instant</div>
-  <div class="block" id="15">Mie Instant</div>
-  <div class="block" id="16">Mie Instant</div> 
+  <div class="block" id="1">1</div>
+  <div class="block" id="2">2</div>
+  <div class="block" id="3">3</div>
+  <div class="block" id="4">4</div>
+  <div class="block" id="5">5</div>
+  <div class="block" id="6">6</div>
+  <div class="block" id="7">7</div>
+  <div class="block" id="8">8</div>
+  <div class="block" id="9">9</div>
+  <div class="block" id="10">10</div>
   </div>
 </div>
 

@@ -6,24 +6,27 @@ $(document).ready(function()
       var id= $(this).attr('id');
       var data_id= $(".data").html();
       var panel= $('.panel');
+      var cont= $('#container');
       var panel_width= $('.panel').css('left');
       
       if(data_id==id)
       {
         //animasi rolling disini
-        panel.animate({left: parseInt(panel.css('left'),0)== 0 ?
-        +panel.outerWidth() : 0}).animate({width:"675px"},1000);
-      }
-      else
+        if(panel_width=='200px'){
+          
+        }else{
+        panel.animate({left: parseInt(panel.css('left'),0)== 0 ? +panel.outerWidth() : 0});
+        }
+      }else
       {
-        if(panel_width='200px')
+        if(panel_width=='200px')
         {
           
         }
         else
         {
           panel.animate({left: parseInt(panel.css('left'),0) == 0 ?
-          +panel.outerWidth() : 0}).animate({width:"200px"},100);
+          +panel.outerWidth() : 0}).animate({width:"675px"},1000);
         }       
       }
       
@@ -37,7 +40,7 @@ $(document).ready(function()
     {
       var panel= $('.panel');
       panel.animate({left: parseInt(panel.css('left'),0) == 0 ?
-      +panel.outerWidth() :0}).animate({width:"199px"},500);
+      +panel.outerWidth() :0}).animate({width:"200px"},500);
       return false;
     });   
   
