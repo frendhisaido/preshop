@@ -27,9 +27,9 @@
   
     <div id="panel-frame">
       <div class="panel">
-          <div class="head"><a href="#" class="close">CLOSE</a></div>
-      </div>  
+          <div class="head"><a href="#" class="close">CLOSE</a></div> 
       <div class="data" style="padding:20px;"></div>
+      </div> 
     </div>
   
   
