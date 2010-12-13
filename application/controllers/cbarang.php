@@ -16,8 +16,6 @@ class cbarang extends Controller {
            $this->load->model('mbarang');
            $data['kategori'] = $this->mbarang->getKategori();
            $data['merk'] = $this->mbarang->getMerk();
-           $data['diskon'] = $this->mbarang->getDiskon();
-           $data['promo'] = $this->mbarang->getPromo();
            $this->load->view('kategori',$data);
     }
     
