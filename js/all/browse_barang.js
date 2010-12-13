@@ -5,6 +5,7 @@ $(document).ready(function()
     {
       var id= $(this).attr('id');
       var data_id= $(".data").html();
+      //var val= $(this).val();
       var panel= $('.panel');
       var cont= $('#container');
       var panel_width= $('.panel').css('left');
