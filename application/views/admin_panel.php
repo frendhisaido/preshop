@@ -22,12 +22,13 @@
          <div id="maincol">
            <h1>Selamat datang di panel admin</h1>
            Disini tempat pengaturan sistem dan input-edit-delete data.
+           nahh,, selamat bekerja,, hihihihiii
            </div>
          <div id="leftcol">
            <p>
            left blank.
            <p align="center">
-           <a href="#"><img src="<?php echo base_url();?>/images/logo2.png" width="64" height="64"></a>
+           <a href="#"><img src="<?php echo base_url();?>/images/logo2.png" width="128" height="128"></a>
            </p>
          </div>
     
