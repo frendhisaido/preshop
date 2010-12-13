@@ -12,7 +12,7 @@
 	  <div id="menus">
         <ul>
           <li><a href="#">Halaman utama.</a></li>
-          <li><a href="#">Mulai pilih-pilih!</a></li>
+          <li><a href="<?php echo site_url('browse_barang');?>">Mulai pilih-pilih!</a></li>
           <li><a href="#">Daftar!</a></li>
           <li><a href="#">Tentang kami.</a>
           </li>

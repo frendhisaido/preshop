@@ -16,5 +16,5 @@
     }
     
   }
-/* End of file welcome.php */
+/* End of file browse_barang.php */
 /* Location: ./system/application/controllers/browse_barang.php */

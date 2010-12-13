@@ -46,5 +46,5 @@ class cbarang extends Controller {
             redirect('cbarang/', 'refresh');
         }
 }
-
-?>
+/* End of file cbarang.php */
+/* Location: ./system/application/controllers/cbarang.php */
