@@ -37,6 +37,12 @@ class cbarang extends Controller {
       $data['list']= $this->mbarang->getBarang();
       $this->load->view('listbarang',$data);
     }
+    //kalau yang ini cuma beda load viewnya aja.
+    function viewBarang(){
+      $this->load->model('mbarang');
+      $data['list']= $this->mbarang->getBarang();
+      $this->load->view('view_barang',$data);
+    }
 
     function add() {
         $this->db->insert('barang',$_POST);

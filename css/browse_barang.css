@@ -23,7 +23,12 @@ a:hover {color:#cc0000}
 }
 .right
 {
-  float:right; width:350px;
+  float:right;
+  width:200px;
+  display: inline;
+  padding-left: 2em;
+  min-height: 300px;
+  
 }
 .left
 {
@@ -31,7 +36,18 @@ a:hover {color:#cc0000}
   background-color:#fff;
   width:200px;
   min-height:300px;
+  display: inline;
   position:relative;
+}
+.resultcontainer
+{
+  float: left;
+  width:350px;  
+}
+.searchbox
+{
+  text-align: center;
+  border-right:solid 1px #999999; 
 }
 .block
 {
