@@ -15,27 +15,32 @@ class cbarang extends Controller {
     function index() {
            $this->load->model('mbarang');
            $data['kategori'] = $this->mbarang->getKategori();
-           $data['merk'] = $this->mbarang->getMerk();
            $this->load->view('kategori',$data);
     }
     
     function addKategori() {
         $this->db->insert('kategori',$_POST);
-        $data['kategoriii'] = $this->mbarang->kategorii();
-        $this->load->view('merk',$data);
+        $sql='select *from kategori where id_kategori=(select max(id_kategori) as id from kategori)';
+        $data['kategori']= $this->db->query($sql);
+        $this->load->view('inputbarang',$data);
     }
     
-    function merk(){
-            $this->load->model('mbarang');
-            $data['kategori1'] = $this->mBarang->getIdKategori($id_kategori)->row();           
-            $this->load->view('merk', $data);
-            
+    function barang(){
+        $this->load->model('mbarang');
+        $sql='select *from kategori where id_kategori=?';
+        $data['kategori']= $this->db->query($sql, $this->uri->segment(3));
+        $this->load->view('inputbarang',$data);
     }
-
+    
+    function listBarang(){
+      $this->load->model('mbarang');
+      $data['list']= $this->mbarang->getBarang();
+      $this->load->view('listbarang',$data);
+    }
 
     function add() {
         $this->db->insert('barang',$_POST);
-        redirect('cbarang/', 'refresh');
+        redirect('cbarang/listBarang', 'refresh');
     }
 
     function delete() {

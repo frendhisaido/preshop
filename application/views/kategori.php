@@ -20,7 +20,7 @@
                             <td><?php echo $i; ?></td>
                             <td><?php echo $row->kategori ?></td>
                 <td><?php 
-                      echo anchor('cbarang/merk/'.$row->id_kategori,'Pilih'); ?>
+                      echo anchor('cbarang/barang/'.$row->id_kategori,'Pilih'); ?>
                 <?php $i++; } ?>
                           </tr>
                         </tbody>

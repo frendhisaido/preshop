@@ -8,7 +8,6 @@
                         <th>No</th>
                         <th>Nama Barang</th>
                         <th>Kategori</th>
-                        <th>Merk</th>
                         <th>Size</th>
                         <th>Harga</th>
                         <th>Diskon</th>
@@ -28,7 +27,6 @@
                             <td><?php echo $i; ?></td>
                             <td><?php echo $row->nama_barang; ?></td>
                             <td><?php echo $row->kategori; ?></td>
-                            <td><?php echo $row->merk; ?></td>
                             <td><?php echo $row->size; ?></td>
                             <td><?php echo $row->harga_barang; ?></td>
                             <td><?php echo $row->diskon; ?></td>
