@@ -40,6 +40,7 @@ class cbarang extends Controller {
     //kalau yang ini cuma beda load viewnya aja.
     function viewBarang(){
       $this->load->model('mbarang');
+      $data['kategori']= $this->mbarang->getKategori();
       $data['list']= $this->mbarang->getBarang();
       $this->load->view('view_barang',$data);
     }

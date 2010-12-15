@@ -1,6 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml"> 
-<head> 
+<head>
+<title>
+Sebelumbelanja.com | Mulai belanja!
+</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <link rel="icon" href="<?php echo base_url();?>images/logo.png" type="image/png" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/browse_barang.css"/>
@@ -18,7 +21,7 @@
       <div class="searchbox">
       Cari: <input value="" />
       </div>
-      <?php $i=1; foreach($list->result() as $katRow) {?>
+      <?php $i=1; foreach($kategori->result() as $katRow) {?>
       <div class="block" id="1">
       <?php echo $i; ?>.
       <?php echo $katRow->kategori; ?>
