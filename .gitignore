@@ -28,3 +28,4 @@ RCS
 RCSLOG
 SCCS
 _$*
+application/config/database.php

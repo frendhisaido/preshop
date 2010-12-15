@@ -21,7 +21,7 @@ class cbarang extends Controller {
     
     function addKategori() {
         $this->db->insert('kategori',$_POST);
-        $data['kategoriii'] = $this->mbarang->kategorii();
+        $data['kategori'] = $this->mbarang->kategorii();
         $this->load->view('merk',$data);
     }
     
