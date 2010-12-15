@@ -13,38 +13,33 @@
 </div>
 
 <div id='container'>
+  <div id='midcontainer'>  
+    <div class="left">
+      <div class="searchbox">
+      Cari: <input value="" />
+      </div>
+      <?php $i=1; foreach($list->result() as $katRow) {?>
+      <div class="block" id="1">
+      <?php echo $i; ?>.
+      <?php echo $katRow->kategori; ?>
+      </div>
+      <?php $i++;}?>
+    </div>
   <div class='right'>
-  <p>Disini bla bla bla bla.</p>
-  <p>blablablabala</p>
-  <p>blablablabala</p>
-  <p>blablablabala</p>
-  <p>blablablabala</p>
-  <p>blablablabala</p>
-  <p>blablablabala</p>
-  <p>blablablabala</p>
-  <p>blablablabala</p>
-  <p>blablablabala</p>
+    kanan.
   </div>
   
-    <div id="panel-frame">
+  <div class='resultcontainer'>
+  this is result container
+  </div>        
+  
+    <!--<div id="panel-frame">
       <div class="panel">
           <div class="head"><a href="#" class="close">CLOSE</a></div> 
-      <div class="data" style="padding:20px;"></div>
+          <div class="data" style="padding:20px;"></div>
       </div> 
-    </div>
-  
-  
-  <div class="left">
-  <div class="block" id="1">1</div>
-  <div class="block" id="2">2</div>
-  <div class="block" id="3">3</div>
-  <div class="block" id="4">4</div>
-  <div class="block" id="5">5</div>
-  <div class="block" id="6">6</div>
-  <div class="block" id="7">7</div>
-  <div class="block" id="8">8</div>
-  <div class="block" id="9">9</div>
-  <div class="block" id="10">10</div>
+    </div> --> 
+
   </div>
 </div>
 
