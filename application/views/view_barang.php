@@ -6,9 +6,9 @@ Sebelumbelanja.com | Mulai belanja!
 </title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 <link rel="icon" href="<?php echo base_url();?>images/logo.png" type="image/png" />
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/browse_barang.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/view_barang.css"/>
 <script type="text/javascript" src="<?php echo base_url();?>/js/jquery.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>/js/all/browse_barang.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>/js/all/view_barang.js"></script>
 </head>
 <body>
 <div id="logo">
@@ -22,7 +22,7 @@ Sebelumbelanja.com | Mulai belanja!
       Cari: <input value="" />
       </div>
       <?php $i=1; foreach($kategori->result() as $katRow) {?>
-      <div class="block" id="1">
+      <div class="block" id="<?php echo $i;?>">
       <?php echo $i; ?>.
       <?php echo $katRow->kategori; ?>
       </div>
@@ -33,7 +33,70 @@ Sebelumbelanja.com | Mulai belanja!
   </div>
   
   <div class='resultcontainer'>
-  this is result container
+    
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
+      </a>
+    <div class="desc">Add a description of the image here</div>
+    </div>
+    
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
+      </a>
+    <div class="desc">Add a description of the image here</div>
+    </div>
+    
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
+      </a>
+    <div class="desc">Add a description of the image here</div>
+    </div>
+    
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
+      </a>
+    <div class="desc">Add a description of the image here</div>
+    </div>
+    
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
+      </a>
+    <div class="desc">Add a description of the image here</div>
+    </div>
+    
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
+      </a>
+    <div class="desc">Add a description of the image here</div>
+    </div>
+    
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
+      </a>
+    <div class="desc">Add a description of the image here</div>
+    </div>
+    
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
+      </a>
+    <div class="desc">Add a description of the image here</div>
+    </div>
+    
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
+      </a>
+    <div class="desc">Add a description of the image here</div>
+    </div>
+    
   </div>        
   
     <!--<div id="panel-frame">

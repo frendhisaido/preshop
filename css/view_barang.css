@@ -42,13 +42,43 @@ a:hover {color:#cc0000}
 .resultcontainer
 {
   float: left;
-  width:350px;  
+  width: 500px;
+  margin: 2em;  
 }
 .searchbox
 {
   text-align: center;
   border-right:solid 1px #999999; 
 }
+
+div.img
+  {
+  border:1px solid #888888;
+  height:auto;
+  width:auto;
+  float:inherit;
+  text-align:center;
+  margin: 1em;
+  }
+div.img img
+  {
+  display:inline;
+  height:128px;
+  width:128px;
+  margin:3px;
+  border:1px solid #ffffff;
+  }
+div.img a:hover img
+  {
+  border:1px solid #0000ff;
+  }
+div.desc
+  {
+  text-align:center;
+  font-weight:normal;
+  width:120px;
+  margin:2px;
+  }
 .block
 {
   border-bottom: dashed 1px #999999;
