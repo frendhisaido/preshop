@@ -58,10 +58,7 @@ class cbarang extends Controller {
         
         function pdf(){
      $this->load->plugin('to_pdf');   
-      $this->load->model('mbarang');
-      $data['kategori']= $this->mbarang->getKategori();
-      $data['list']= $this->mbarang->getBarang();
-     $html = $this->load->view('view_barang',$data,true);
+     $html = $this->load->view('cobapdf',$data,true);
      pdf_create($html, 'filename');
     }  
 }
