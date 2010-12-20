@@ -51,7 +51,7 @@ a:hover {color:#cc0000}
   border-right:solid 1px #999999; 
 }
 
-div.img
+div.item
   {
   border:1px solid #888888;
   height:auto;
@@ -60,7 +60,7 @@ div.img
   text-align:center;
   margin: 1em;
   }
-div.img img
+div.item item
   {
   display:inline;
   height:128px;
@@ -68,7 +68,7 @@ div.img img
   margin:3px;
   border:1px solid #ffffff;
   }
-div.img a:hover img
+div.item a:hover item
   {
   border:1px solid #0000ff;
   }

@@ -33,69 +33,18 @@ Sebelumbelanja.com | Mulai belanja!
   </div>
   
   <div class='resultcontainer'>
-    
-    <div class="img">
+    <?php $u=1; foreach($list->result() as $listRow) { ?>
+    <div class="item" id="<?php echo $u;?>">
       <a target="_blank" href="#">
         <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
       </a>
-    <div class="desc">Add a description of the image here</div>
+    <div class="desc">
+    <?php echo $listRow->nama_barang;?>.
+    Rp <?php echo $listRow->harga_barang; ?>,00
+    <?php echo $listRow->size;?>.
     </div>
-    
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
-      </a>
-    <div class="desc">Add a description of the image here</div>
     </div>
-    
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
-      </a>
-    <div class="desc">Add a description of the image here</div>
-    </div>
-    
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
-      </a>
-    <div class="desc">Add a description of the image here</div>
-    </div>
-    
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
-      </a>
-    <div class="desc">Add a description of the image here</div>
-    </div>
-    
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
-      </a>
-    <div class="desc">Add a description of the image here</div>
-    </div>
-    
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
-      </a>
-    <div class="desc">Add a description of the image here</div>
-    </div>
-    
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
-      </a>
-    <div class="desc">Add a description of the image here</div>
-    </div>
-    
-    <div class="img">
-      <a target="_blank" href="#">
-        <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
-      </a>
-    <div class="desc">Add a description of the image here</div>
-    </div>
+    <?php $u++;}?>
     
   </div>        
   
