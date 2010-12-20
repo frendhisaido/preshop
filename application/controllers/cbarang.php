@@ -55,6 +55,15 @@ class cbarang extends Controller {
             $this->db->query($sql, $this->uri->segment(3));
             redirect('cbarang/', 'refresh');
         }
+        
+        function pdf(){
+     $this->load->plugin('to_pdf');   
+      $this->load->model('mbarang');
+      $data['kategori']= $this->mbarang->getKategori();
+      $data['list']= $this->mbarang->getBarang();
+     $html = $this->load->view('view_barang',$data,true);
+     pdf_create($html, 'filename');
+    }  
 }
 /* End of file cbarang.php */
 /* Location: ./system/application/controllers/cbarang.php */
