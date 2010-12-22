@@ -35,17 +35,17 @@ Sebelumbelanja.com | Mulai belanja!
   <div class='resultcontainer'>
     <?php $u=1; foreach($list->result() as $listRow) { ?>
     <div class="item" id="<?php echo $u;?>">
-      <a target="_blank" href="#">
+        <a target="_blank" href="#">
         <img src="<?php echo base_url();?>images/itm/image_not_found.png" alt="Klematis" width="110" height="90" />
       </a>
-    <div class="desc">
-    <?php echo $listRow->nama_barang;?>.
-    Rp <?php echo $listRow->harga_barang; ?>,00
-    <?php echo $listRow->size;?>.
-    </div>
+      <div class="desc">
+        <?php echo $listRow->nama_barang;?>.
+        Rp <?php echo $listRow->harga_barang; ?>,00
+        <?php echo $listRow->size;?>.
+      </div>
     </div>
     <?php $u++;}?>
-    
+    <?php echo $this->pagination->create_links();?>
   </div>        
   
     <!--<div id="panel-frame">

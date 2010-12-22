@@ -34,14 +34,23 @@ class cbarang extends Controller {
     
     function listBarang(){
       $this->load->model('mbarang');
-      $data['list']= $this->mbarang->getBarang();
+      $data['list']= $this->mbarang->getListBarang();
       $this->load->view('listbarang',$data);
     }
     //kalau yang ini cuma beda load viewnya aja.
     function viewBarang(){
+      //siapkan pagination  
+      $this->load->library('pagination');
+      $config['base_url']= base_url().'index.php/cbarang/viewBarang/';
+      $config['total_rows']= $this->db->count_all('barang');
+      $config['per_page']= '10';
+      $this->pagination->initialize($config);
+      
+      
+      
       $this->load->model('mbarang');
       $data['kategori']= $this->mbarang->getKategori();
-      $data['list']= $this->mbarang->getBarang();
+      $data['list']= $this->mbarang->getBarang($config['per_page'],$this->uri->segment(3));
       $this->load->view('view_barang',$data);
     }
 

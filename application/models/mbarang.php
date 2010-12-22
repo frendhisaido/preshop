@@ -16,11 +16,20 @@ class mbarang extends Model {
            return $this->db->get('kategori');
        }
     
-    function getBarang(){
+    function getListBarang(){
       $sql='select b.id_barang, b.nama_barang, k.kategori, b.size, b.harga_barang, b.diskon, b.promo
             , b.tgl_selesai_promo, b.tgl_selesai_diskon, b.keterangan from barang b, kategori k
             where b.id_kategori=k.id_kategori';
       return $this->db->query($sql);
+    }
+    
+    function getBarang($jumlah, $mulai){
+      $query = $this->db->get('barang',$jumlah, $mulai);
+      /*$sql='select b.id_barang, b.nama_barang, k.kategori, b.size, b.harga_barang, b.diskon, b.promo
+            , b.tgl_selesai_promo, b.tgl_selesai_diskon, b.keterangan from barang b, kategori k
+            where b.id_kategori=k.id_kategori';
+      return $this->db->query($sql);*/
+      return $query;
     }
 }
 
