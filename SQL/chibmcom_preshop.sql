@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.4
+-- version 3.3.8.1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Waktu pembuatan: 20. Desember 2010 jam 13:27
--- Versi Server: 5.1.41
--- Versi PHP: 5.3.1
+-- Generation Time: Dec 23, 2010 at 12:17 AM
+-- Server version: 5.1.46
+-- PHP Version: 5.2.13
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -22,7 +22,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang`
+-- Table structure for table `barang`
 --
 
 CREATE TABLE IF NOT EXISTS `barang` (
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `barang` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
--- Dumping data untuk tabel `barang`
+-- Dumping data for table `barang`
 --
 
 INSERT INTO `barang` (`id_barang`, `id_kategori`, `nama_barang`, `size`, `harga_barang`, `diskon`, `promo`, `tgl_selesai_promo`, `tgl_selesai_diskon`, `keterangan`) VALUES
@@ -53,7 +53,7 @@ INSERT INTO `barang` (`id_barang`, `id_kategori`, `nama_barang`, `size`, `harga_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang_keluar`
+-- Table structure for table `barang_keluar`
 --
 
 CREATE TABLE IF NOT EXISTS `barang_keluar` (
@@ -66,14 +66,14 @@ CREATE TABLE IF NOT EXISTS `barang_keluar` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Dumping data untuk tabel `barang_keluar`
+-- Dumping data for table `barang_keluar`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang_masuk`
+-- Table structure for table `barang_masuk`
 --
 
 CREATE TABLE IF NOT EXISTS `barang_masuk` (
@@ -86,14 +86,14 @@ CREATE TABLE IF NOT EXISTS `barang_masuk` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Dumping data untuk tabel `barang_masuk`
+-- Dumping data for table `barang_masuk`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `iklan`
+-- Table structure for table `iklan`
 --
 
 CREATE TABLE IF NOT EXISTS `iklan` (
@@ -106,14 +106,14 @@ CREATE TABLE IF NOT EXISTS `iklan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Dumping data untuk tabel `iklan`
+-- Dumping data for table `iklan`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE IF NOT EXISTS `kategori` (
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `kategori` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
@@ -137,7 +137,7 @@ INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `stock`
+-- Table structure for table `stock`
 --
 
 CREATE TABLE IF NOT EXISTS `stock` (
@@ -148,10 +148,32 @@ CREATE TABLE IF NOT EXISTS `stock` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Dumping data untuk tabel `stock`
+-- Dumping data for table `stock`
 --
 
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `nama` varchar(30) NOT NULL,
+  `telp` varchar(15) NOT NULL,
+  `level` int(1) NOT NULL DEFAULT '1',
+  `baned_status` int(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id_user`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id_user`, `username`, `password`, `nama`, `telp`, `level`, `baned_status`) VALUES
+(1, 'bram', '46947fc34c923a838bf8274410a837f5e828d845cbce413881', 'Bramandityo Prabowo', '085279916229', 1, 0),
+(2, 'abang', 'b1f1649f0680fa37dbf3c6292273a752ee261f318a3b39f7c4', 'Frendhi saido danaro', '085279916229', 1, 0),
+(3, 'nguk', '694a5369ff875803d61b272f6ccb44fba97a1d058f6540d0be', 'Nguk syalala', '16516', 1, 0);
