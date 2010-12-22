@@ -40,7 +40,7 @@
 |
 */
 
-$route['default_controller'] = "start_preshop";
+$route['default_controller'] = "preshop";
 $route['scaffolding_trigger'] = "";
 
 
