@@ -15,10 +15,24 @@
           ?>
           <li><a href="<?php echo site_url(); ?>/preshop/" <?php if ($now == ''){ echo "class=\"current\"";}?>>Halaman utama.</a></li>
           <li><a href="<?php echo site_url(); ?>/preshop/mulai" <?php if ($now == 'mulai'){ echo "class=\"current\"";}?>>Mulai Belanja</a></li>
-          <li><a href="<?php echo site_url(); ?>/preshop/daftar" <?php if ($now == 'daftar'){ echo "class=\"current\"";}?>>Daftar</a></li>
-          <li><a href="<?php echo site_url(); ?>/preshop/tentang" <?php if ($now == 'tentang'){ echo "class=\"current\"";}?>>Tentang kami.</a>
-          </li>
-         
+          <?php 
+          $id = $this->session->userdata('id_user');
+          $site = site_url();
+          if ($id ==''){
+          echo "<li><a href=\"$site/preshop/daftar\"";
+          if ($now == 'daftar'){ 
+           echo "class=\"current\"";
+          }
+          echo ">Daftar</a></li>";
+          }
+          ?>
+          
+          <li><a href="<?php echo site_url(); ?>/preshop/tentang" <?php if ($now == 'tentang'){ echo "class=\"current\"";}?>>Tentang kami.</a></li>
+         <?php 
+         if ($id != ''){
+          echo "<li><a href=\"$site/preshop/logout\">Logout</a></li>";
+         }else echo "<li><a href=\"$site/preshop/login\">Login</a></li>";
+         ?>
         </ul>     
       </div>
 	</div>

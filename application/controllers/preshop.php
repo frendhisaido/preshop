@@ -21,6 +21,7 @@
     }
     
     function mulai(){
+       $this->system_user->check_session(1);
        $this->load->view('header');
        $this->load->view('mulai');
        $this->load->view('footer');
@@ -37,5 +38,10 @@
        $this->load->view('login');
        $this->load->view('footer');
     }
+    
+    function logout(){
+		$this->session->sess_destroy();
+		redirect('preshop');
+	}
     
   }

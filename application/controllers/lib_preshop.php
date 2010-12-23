@@ -14,4 +14,10 @@
     $nama = $this->input->post('nama');
     $this->system_user->tambah_user($username,$pass1,$pass2,$telp,$nama);
     }
+    
+    function login(){
+    $username = $this->input->post('username');
+    $password = $this->input->post('password');
+    $this->system_user->check_login($username,$password);
+    }
 }

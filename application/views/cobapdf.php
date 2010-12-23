@@ -1,9 +1,0 @@
-<html>
-<bory>
- <table>
-     <tr><td>Nama</td><td></td><td>HAH</td></tr>
-     <tr><td>Nim</td><td></td><td>42445</td></tr>
-     <tr><td>Kelas</td><td></td><td>nguk</td></tr>
- </table>
-</body>
-</html>
