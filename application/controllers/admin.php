@@ -17,7 +17,7 @@
     function pengguna(){
     $this->system_user->check_session(0);
     $this->load->view('admin/header');
-    $this->load->view('admin/home');
+    $this->load->view('admin/pengguna');
     $this->load->view('admin/footer');      
     }
     

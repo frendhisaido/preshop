@@ -6,7 +6,7 @@ class System_user extends Model {
         parent:: Model();
     }
 
-    function tambah_user($username,$pass1,$pass2,$telp,$nama){
+    function tambah_user($username,$pass1,$pass2,$telp,$nama,$rahasia,$jawaban){
     $enc_pass = $this->system_setting->hashing($pass1);
     $cek_user = $this->db->query("select * from user where username like \"$username\" or nama like \"$nama\"");
     if ($cek_user->num_rows() > 0 ){
@@ -16,21 +16,24 @@ class System_user extends Model {
     }else if($username == '' || $pass1 == '' || $pass2 == '' || $telp == '' || $nama == ''){
        $this->system_view->error_report('Tolong isi form pendaftaran dengan data yang lengkap !');
     }else {
-       $this->db->query("insert into user(username,password,telp,nama) values(\"$username\",\"$enc_pass\",\"$telp\",\"$nama\")");
+       $this->db->query("insert into user(username,password,telp,nama,rahasia,jawaban) values(\"$username\",\"$enc_pass\",\"$telp\",\"$nama\",\"$rahasia\",\"$jawaban\")");
        $this->system_view->success_report("Selamat $nama, anda telah terdaftar pada sistem kami, silahkan mulai berbelanja");
     }
     }
     
     function check_login($username,$password){
+        $site = site_url();
         $enc_pass = $this->system_setting->hashing($password);
         $query = $this->db->query("select * from user where username like \"$username\" and password like \"$enc_pass\"");
         if ($query->num_rows() > 0 ){
            $row = $query->row_array();
            $baned = $row['baned_status'];
            $level = $row['level'];
+           
+           $id =  $row['id_user'];
            if($baned == 0){
            $data = array(
-                   'id_user'   => $row['id_user'],
+                   'id_user'   => $id,
                    'username'  => $row['username'],
                    'password'  => $row['password'],
                    'level'     => $level
@@ -45,7 +48,25 @@ class System_user extends Model {
            } else if($baned == 1 ){
                $this->system_view->error_report("Maaf, untuk sementara username anda kami blok, silahkan hubungi administrator kami , untuk info yang lebih jelas");
            }
-        }else $this->system_view->error_report("Maaf, Username atau password yang anda masukan tidak cocok");
+        }else {
+	    $hah = $this->db->query("select * from user where username like \"$username\"");
+	    
+	    if ($hah->num_rows() > 0){
+	    $wew = $hah->row_array();
+	    $error_loging = $wew['login_gagal'];
+	    $id_user = $wew['id_user'];
+	    $now_attemp = $error_loging+1;
+		if ($error_loging <= 3 ){
+		$this->db->query("update user set login_gagal='$now_attemp' where id_user = $id_user");
+	        $this->system_view->error_report("Maaf, Username atau password yang anda masukan tidak cocok");
+		}else if ($error_loging > 3){
+		   $message = "Sistem Kami mencatat anda telah melakukan keselahan Login sebanyak 3 kali.<br>
+		               Apabila anda benar $username, Silahkan reset password pada <a href=\"$site/preshop/reset_pass/$id_user\">halaman ini</a>
+		              ";
+		   $this->system_view->error_report($message);
+		}
+	    }else $this->system_view->error_report("Maaf, Kami tidak dapet menemukan Username atau Nama di database kami");
+        }
     }
     
     function check_session($permission){
@@ -63,4 +84,6 @@ class System_user extends Model {
        redirect('preshop/login');
        }
     }
+    
+   
 }

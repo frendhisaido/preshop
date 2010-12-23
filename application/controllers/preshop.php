@@ -39,6 +39,17 @@
        $this->load->view('footer');
     }
     
+     function reset_pass($id = ''){
+       if ($id = ''){
+         redirect('preshop');
+       }else {
+       $data['id_user']=$id;
+       $this->load->view('header');
+       $this->load->view('reset_pass',$data);
+       $this->load->view('footer');
+       }
+    }
+    
     function logout(){
 		$this->session->sess_destroy();
 		redirect('preshop');

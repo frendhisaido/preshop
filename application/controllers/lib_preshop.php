@@ -12,7 +12,9 @@
     $pass2 = $this->input->post('confirm_password');
     $telp = $this->input->post('telp');
     $nama = $this->input->post('nama');
-    $this->system_user->tambah_user($username,$pass1,$pass2,$telp,$nama);
+    $rahasia = $this->input->post('rahasia');
+    $jawaban = $this->input->post('jawaban');
+    $this->system_user->tambah_user($username,$pass1,$pass2,$telp,$nama,$rahasia,$jawaban);
     }
     
     function login(){
