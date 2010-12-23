@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 23, 2010 at 12:17 AM
+-- Generation Time: Dec 23, 2010 at 11:43 PM
 -- Server version: 5.1.46
 -- PHP Version: 5.2.13
 
@@ -161,19 +161,21 @@ CREATE TABLE IF NOT EXISTS `stock` (
 CREATE TABLE IF NOT EXISTS `user` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(30) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `nama` varchar(30) NOT NULL,
   `telp` varchar(15) NOT NULL,
   `level` int(1) NOT NULL DEFAULT '1',
   `baned_status` int(1) NOT NULL DEFAULT '0',
+  `rahasia` text NOT NULL,
+  `jawaban` text NOT NULL,
+  `login_gagal` int(2) NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `username`, `password`, `nama`, `telp`, `level`, `baned_status`) VALUES
-(1, 'bram', '46947fc34c923a838bf8274410a837f5e828d845cbce413881', 'Bramandityo Prabowo', '085279916229', 1, 0),
-(2, 'abang', 'b1f1649f0680fa37dbf3c6292273a752ee261f318a3b39f7c4', 'Frendhi saido danaro', '085279916229', 1, 0),
-(3, 'nguk', '694a5369ff875803d61b272f6ccb44fba97a1d058f6540d0be', 'Nguk syalala', '16516', 1, 0);
+INSERT INTO `user` (`id_user`, `username`, `password`, `nama`, `telp`, `level`, `baned_status`, `rahasia`, `jawaban`, `login_gagal`) VALUES
+(1, 'admin', 'a11952ec8b5f3d79c1e65d41ba2947a20dc262472ddb0bbedb166e9d413dbd8f', 'Administrator', '085279916229', 0, 0, '', '0', 0),
+(10, 'bram', '46947fc34c923a838bf8274410a837f5e828d845cbce413881471802dcd981f3', 'Bramandityo Prabowo', '085279916229', 1, 0, 'Siapakah nama anjing saya', 'edi', 4);
