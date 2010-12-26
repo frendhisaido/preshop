@@ -22,4 +22,11 @@
     $password = $this->input->post('password');
     $this->system_user->check_login($username,$password);
     }
+    
+    function reset_pass(){
+    $id = $this->input->post('id');
+    $jawaban = $this->input->post('jawaban');
+    $this->system_user->reset_pass($id,$jawaban);
+    }
+    
 }

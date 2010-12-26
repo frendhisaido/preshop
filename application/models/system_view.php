@@ -27,7 +27,15 @@ class System_view extends Model {
        }else if($nguk == 1){
          $status = "Di blokir";
        }
-       echo "<tr><td>$i</td><td>$username</td><td>$nama</td><td>$telp</td><td>$level</td><td>$status</td><td>Hapus || Edit</td></tr>";
+       echo "<tr>
+           <td>$i</td>
+           <td>$username</td>
+           <td>$nama</td>
+           <td>$telp</td>
+           <td><a href=\"\" title=\"Klik Link ini untuk mengubah level pengguna\">$level</a></td>
+           <td><a href=\"\" title=\"Klik link ini untuk mengubah status blokir pengguna\">$status</a></td>
+           <td><a href=\"\">Hapus</a><br><a href=\"\">Edit</a></td>
+           </tr>\n";
        $i++;
      }
      echo "</table>";
@@ -45,5 +53,19 @@ class System_view extends Model {
     $this->load->view('header');
     $this->load->view('success',$data);
     $this->load->view('footer');
+    }
+    
+      function error_report_admin($message){
+    $data['message'] = $message;
+    $this->load->view('admin/header');
+    $this->load->view('admin/error',$data);
+    $this->load->view('admin/footer');
+    }
+
+    function success_report_admin($message){
+    $data['message'] = $message;
+    $this->load->view('admin/header');
+    $this->load->view('admin/success',$data);
+    $this->load->view('admin/footer');
     }
 }
