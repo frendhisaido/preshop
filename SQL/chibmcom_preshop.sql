@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 23, 2010 at 11:43 PM
+-- Generation Time: Dec 26, 2010 at 09:40 PM
 -- Server version: 5.1.46
 -- PHP Version: 5.2.13
 
@@ -29,26 +29,22 @@ CREATE TABLE IF NOT EXISTS `barang` (
   `id_barang` int(11) NOT NULL AUTO_INCREMENT,
   `id_kategori` int(11) NOT NULL,
   `nama_barang` varchar(50) NOT NULL,
+  `merk` varchar(50) NOT NULL,
   `size` varchar(35) NOT NULL,
   `harga_barang` int(11) NOT NULL,
-  `diskon` int(11) NOT NULL,
+  `diskon` int(11) DEFAULT NULL,
   `promo` tinyint(1) NOT NULL DEFAULT '0',
   `tgl_selesai_promo` date NOT NULL,
   `tgl_selesai_diskon` date NOT NULL,
   `keterangan` varchar(100) NOT NULL,
+  `gambar` varchar(100) NOT NULL,
   PRIMARY KEY (`id_barang`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `id_kategori`, `nama_barang`, `size`, `harga_barang`, `diskon`, `promo`, `tgl_selesai_promo`, `tgl_selesai_diskon`, `keterangan`) VALUES
-(4, 1, 'coba', '200', 10000, 0, 0, '0000-00-00', '0000-00-00', ''),
-(3, 2, 'coba', '', 0, 0, 0, '0000-00-00', '0000-00-00', ''),
-(5, 3, 'coba', '200grm', 20000, 0, 1, '0000-00-00', '0000-00-00', ''),
-(6, 3, 'coba', '200grm', 20000, 0, 1, '0000-00-00', '0000-00-00', ''),
-(7, 2, 'mencoba', '200ml', 20000, 0, 0, '0000-00-00', '0000-00-00', '');
 
 -- --------------------------------------------------------
 
@@ -93,6 +89,22 @@ CREATE TABLE IF NOT EXISTS `barang_masuk` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `belanja`
+--
+
+CREATE TABLE IF NOT EXISTS `belanja` (
+  `id_barang` int(3) NOT NULL,
+  `id_list_belanja` int(3) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `belanja`
+--
+
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `iklan`
 --
 
@@ -120,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `kategori` (
   `id_kategori` int(11) NOT NULL AUTO_INCREMENT,
   `kategori` varchar(35) NOT NULL,
   PRIMARY KEY (`id_kategori`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `kategori`
@@ -132,7 +144,29 @@ INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
 (3, 'snack'),
 (5, 'obat'),
 (6, 'minuman'),
-(7, 'baterai');
+(7, 'baterai'),
+(8, 'bantal'),
+(9, 'Alat Masak'),
+(10, 'eskrim');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `list_belanja`
+--
+
+CREATE TABLE IF NOT EXISTS `list_belanja` (
+  `id_list_belanja` int(3) NOT NULL AUTO_INCREMENT,
+  `id_user` int(3) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `tgl_buat` datetime NOT NULL,
+  PRIMARY KEY (`id_list_belanja`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `list_belanja`
+--
+
 
 -- --------------------------------------------------------
 
@@ -170,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `jawaban` text NOT NULL,
   `login_gagal` int(2) NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `user`
@@ -178,4 +212,5 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `nama`, `telp`, `level`, `baned_status`, `rahasia`, `jawaban`, `login_gagal`) VALUES
 (1, 'admin', 'a11952ec8b5f3d79c1e65d41ba2947a20dc262472ddb0bbedb166e9d413dbd8f', 'Administrator', '085279916229', 0, 0, '', '0', 0),
-(10, 'bram', '46947fc34c923a838bf8274410a837f5e828d845cbce413881471802dcd981f3', 'Bramandityo Prabowo', '085279916229', 1, 0, 'Siapakah nama anjing saya', 'edi', 4);
+(10, 'bram', '46947fc34c923a838bf8274410a837f5e828d845cbce413881471802dcd981f3', 'Bramandityo Prabowo', '085279916229', 1, 0, 'Siapakah nama anjing saya', 'edi', 0),
+(11, 'abang', 'b1f1649f0680fa37dbf3c6292273a752ee261f318a3b39f7c4833feb0bfea8b2', 'Frendhi', '085279916229', 1, 0, 'Siapa nama anjing saya', 'herbet', 1);
