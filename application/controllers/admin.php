@@ -26,7 +26,10 @@
     $this->load->view('admin/footer');      
     }
     
-    function list_barang(){
-    
+     function list_barang(){
+    $this->load->view('admin/header');
+    $this->load->view('admin/list_barang');
+    $this->load->view('admin/footer');      
     }
+    
 }

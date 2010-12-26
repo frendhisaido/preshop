@@ -32,18 +32,26 @@
 		{
 			$data = $this->upload->data();
 			$file = $data['file_name'];
+			$raw = $data['raw_name'];
+			mkdir("$upload/$cat");
 			$this->unzip->allow(array('csv','jpg'));
 			$this->unzip->extract("$upload/$file","$upload/$cat"); 
-//                         $nguk = $this->csvreader->parse_file("$upload/$file");
-//                         foreach($nguk as $bram){
-//                           $nama = $bram['nama barang'];
-//                           $merk = $bram['nama merek'];
-//                           $size = $bram['size'];
-//                           $harga = $bram['harga'];
-//                           $this->db->query("insert into barang(id_kategori,nama_barang,merk,size,harga_barang) value($cat,\"$nama\",\"$merk\",\"$size\",$harga)");
-//                           echo "Barang $nama, dengan $merk berhasil ditambahkan ke database <br><br>\n";
-                        }
-                        
+                        $nguk = $this->csvreader->parse_file("$upload/$cat/$raw.csv");
+                        foreach($nguk as $bram){
+                          $nama = $bram['nama barang'];
+                          $merk = $bram['nama merek'];
+                          $size = $bram['size'];
+                           $harga = $bram['harga'];
+                           $g = $bram['gambar'];
+                           
+                           if ($g != '' ){
+                           $message = "".$g."".$merk."";
+                           $gambar = $this->system_setting->hashing($message);
+                           rename("$upload/$cat/gambar/$g.jpg","$upload/gambar/$gambar.jpg");
+                           }else $gambar = 'nopict';
+                           $this->db->query("insert into barang(id_kategori,nama_barang,merk,size,harga_barang,gambar) value($cat,\"$nama\",\"$merk\",\"$size\",$harga,\"$gambar\")");                   
+                           }
+                          $this->system_view->success_report_admin("Semua data sudah berhasil masuk kedalam database, silahkan cek pada bagian list barang");
 		}
     }
 }

@@ -19,7 +19,8 @@
           ?>
           <li><a href="<?php echo site_url(); ?>/admin/" <?php if ($now == ''){ echo "class=\"current\"";}?>>Admin Panel.</a></li>
           <li><a href="<?php echo site_url(); ?>/admin/pengguna" <?php if ($now == 'pengguna'){ echo "class=\"current\"";}?>>Pengguna</a></li>
-          <li><a href="<?php echo site_url(); ?>/admin/barang" <?php if ($now == 'barang'){ echo "class=\"current\"";}?>>Barang</a></li>
+          <li><a href="<?php echo site_url(); ?>/admin/barang" <?php if ($now == 'barang'){ echo "class=\"current\"";}?>>Input Barang</a></li>
+          <li><a href="<?php echo site_url(); ?>/admin/list_barang" <?php if ($now == 'list_barang'){ echo "class=\"current\"";}?>>List Barang</a></li>
          <?php 
          $site = site_url();
          $id = $this->session->userdata('id_user');
