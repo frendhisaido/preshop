@@ -12,7 +12,7 @@
 |
 */
 $config['base_url']	= "http://localhost/preshop/";
-
+$config['upload_csv'] = "/var/www/htdocs/preshop/csv/";
 /*
 |--------------------------------------------------------------------------
 | Index File
