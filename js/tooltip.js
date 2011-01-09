@@ -53,4 +53,34 @@ $(document).ready(function()
    });
     });
  });
+ 
+ 
+ $(document).ready(function() 
+{
+     $('td.barang').each(function()
+   {
+      var content = '<img src="';
+      content += $(this).attr('rel');
+      content += '" width="250" height="250"/>';
+      $(this).qtip(
+      {
+         content: content,
+         position: {
+            corner: {
+               target: 'topRight', 
+               tooltip: 'bottomLeft'
+              }
+         },
+         style: {
+            tip: true, 
+            border: {
+               width: 0,
+               radius: 4
+            },
+            name: 'green', 
+         }
+   });
+    });
+ });
+
       

@@ -3,9 +3,14 @@
 <title>Sebelumbelanja.com</title>
 <link rel="icon" href="<?php echo base_url();?>images/logo.png" type="image/png" />
 <link rel="stylesheet" href="<?php echo base_url();?>css/home_style.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo base_url();?>css/south-street/jquery.ui.css" type="text/css" />
 <script src="<?php echo base_url()?>js/jquery.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url()?>js/jquery.ui.js" type="text/javascript"></script>
+<script src="<?php echo base_url()?>js/function.js" type="text/javascript"></script>
 <script src="<?php echo base_url()?>js/jquery.qtip.js" type="text/javascript"></script>
+<script src="<?php echo base_url()?>js/jquery.form.js" type="text/javascript"></script>
 <script src="<?php echo base_url()?>js/select.js" type="text/javascript"></script>
+<script src="<?php echo base_url()?>js/jquery.paginate.js" type="text/javascript"></script>
 <script src="<?php echo base_url()?>js/tooltip.js" type="text/javascript"></script>
 </head>
 <body>

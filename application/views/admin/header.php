@@ -6,6 +6,7 @@
 <script src="<?php echo base_url()?>js/jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url()?>js/jquery.qtip.js" type="text/javascript"></script>
 <script src="<?php echo base_url()?>js/select.js" type="text/javascript"></script>
+<script src="<?php echo base_url()?>js/function.js" type="text/javascript"></script>
 <script src="<?php echo base_url()?>js/tooltip.js" type="text/javascript"></script>
 </head>
 <body>
