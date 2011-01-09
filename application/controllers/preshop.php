@@ -41,11 +41,27 @@
        $this->load->view('footer');
     }
     
-    function cari(){
+      function gen_list($id){
        $this->system_user->check_session(1);
-       $a = $this->input->post('barang');
-       $barang = strip_quotes($a);
-       $data['barang'] = $barang ;
+       $this->load->view('header');
+       $this->load->view('cetak');
+       $this->load->view('footer');
+    }
+    
+    
+    function cari($berdasarkan='',$value=''){
+       $this->system_user->check_session(1);
+       
+       if($berdasarkan == 'nama'){
+	  $a = $this->input->post('barang');
+	  $barang = strip_quotes($a);
+	  $data['barang'] = $barang;
+	  $data['dasar'] = $berdasarkan;
+       }else if($berdasarkan == 'kategori'){
+	  $data['barang'] = $value ;
+	  $data['dasar'] = $berdasarkan;
+       } 
+	
        $this->load->view('header');
        $this->load->view('cari',$data);
        $this->load->view('footer');
