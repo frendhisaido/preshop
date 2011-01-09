@@ -7,17 +7,17 @@ class System_barang extends Model {
     }
      
      function get_cat($jenis){
-     $query = $this->db->query("select * from kategori");
-     if ($jenis == 'select'){
-	echo "<select title=\"Pilih Kategori barang yang akan anda upload\" name=\"kategori\">";
+      $query = $this->db->query("select * from kategori");
+      if ($jenis == 'select'){
+	  echo "<select title=\"Pilih Kategori barang yang akan anda upload\" name=\"kategori\">";
 	
-	foreach($query->result() as $row){
-	    echo "<option value=\"".$row->id_kategori."\">".$row->kategori."</option>";
-	}
-	echo "</select>";
-	}else if ($jenis == 'table'){
-	  echo "<div align=\"center\"><table cellpadding=\"5\" class=\"perlu\">
-	        <tr><th>Nama Kategori</th><th>Aksi</th></tr>
+	  foreach($query->result() as $row){
+	      echo "<option value=\"".$row->id_kategori."\">".$row->kategori."</option>";
+	  }
+	    echo "</select>";
+	  }else if ($jenis == 'table'){
+	    echo "<div align=\"center\"><table cellpadding=\"5\" class=\"perlu\">
+		  <tr><th>Nama Kategori</th><th>Aksi</th></tr>
 	       ";
 	    foreach($query->result() as $row){
 	      echo "<tr><td>".$row->kategori."</td><td><a href=\"\">Hapus</a> || <a href=\"\">Ubah</a> </td><tr>";
@@ -78,6 +78,30 @@ class System_barang extends Model {
      for ($h=1;$h<=$pages;$h++){
        echo "<a href=\"$site/admin/list_barang/".($h-1)."\">$h</a>";
      }
+     }
+     
+     function list_kategori(){
+	$site = site_url();
+	$query = $this->db->query("select * from kategori");
+	$limit_per_row = 4;
+	$i = 0;
+	echo "<table cellpadding=\"20\"><tr>";
+	foreach($query->result_array() as $row){
+	  $kategori = $row['kategori'];
+	  if($i <= $limit_per_row){
+	    echo "<td>";
+	    echo "<a href=\"$site/preshop/cari/\">$kategori</a>";
+	    echo "</td>";
+	    $i++;
+	  }else if( $i >= $limit_per_row){
+	    echo "</tr><tr>";
+	    echo "<td>";
+	    echo "<a href=\"$site/preshop/cari/\">$kategori</a>";
+	    echo "</td>";
+	    $i = 0;
+	  }
+	}
+	echo "</tr></table>";
      }
     
 }

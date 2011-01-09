@@ -20,7 +20,7 @@
        $this->load->view('footer');
     }
     
-    function mulai(){
+    function mulai($tambahan=''){
        $this->system_user->check_session(1);
        $this->load->view('header');
        $this->load->view('mulai');
