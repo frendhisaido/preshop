@@ -1,7 +1,7 @@
 
 body{ 
   background-color: #FFFFFF;
-  background-image: url(http://localhost/preshop/images/bgimage.png);
+  background-image: url(../images/bgimage.png);
   background-position: center top;
   background-repeat: no-repeat;
  
@@ -24,7 +24,7 @@ body{
  position:relative; 
  height:110px;
  background-color: rgba(0,0,0,0);
- background-image: url(http://localhost/preshop/images/headerlogo.png); 
+ background-image: url(../images/headerlogo.png); 
  background-repeat: no-repeat;
  background-position-x: -75px;
  width: auto;

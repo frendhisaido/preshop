@@ -11,7 +11,7 @@
 |	http://example.com/
 |
 */
-$config['base_url']	= "http://localhost/preshop/";
+$config['base_url']	= "http://192.168.70.248/preshop/";
 $config['upload_csv'] = "/var/www/htdocs/preshop/csv/";
 /*
 |--------------------------------------------------------------------------
