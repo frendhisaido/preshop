@@ -18,7 +18,7 @@ class System_belanja extends Model {
       echo "<a href=\"$site/preshop/gen_list/$id\" title=\"Klik link ini untuk mencetak daftar belanja <h3>$nama</h3>\">$nama</a><br>";
       $belanja = $this->db->query("select * from belanja where id_list_belanja = $id");
       echo "<table cellpadding=\"5\">";
-      echo "<tr><th>No</th><th>Nama Barang</th><th>Merek</th><th>Jumlah</th><th>Harga</th><th>SubTotal</><th>Aksi</th></tr>";
+      echo "<thead><tr><th>No</th><th>Nama Barang</th><th>Merek</th><th>Jumlah</th><th>Harga</th><th>SubTotal</><th>Aksi</th></tr></thead>  <tbody>";
       $i=1;
       $total = 0;
       foreach($belanja->result_array() as $row){
@@ -37,12 +37,12 @@ class System_belanja extends Model {
 	echo "<tr><td>$i</td><td rel=\"$base/csv/gambar/$a_pict.jpg\" class=\"barang\">$a_nama_barang</td><td>$a_merk</td><td>$a_jumlah</td><td>$f_harga</td><td>$f_total</td><td>Aksi</td></tr>";
 	$i++;
 	$total = $total + $a_total;
-
       }
       $t = money_format('%.2n', $total);
-      echo "</table>";
+      echo "</tbody><tfoot><p>";
       echo "Total Belanja anda adalah : $t";
-      echo "<br><br>";
+      echo "</p></tfoot>";
+      echo "</table>";
     }
     
     }
