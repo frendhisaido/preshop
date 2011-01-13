@@ -35,6 +35,22 @@
     $this->system_belanja->tambah_daftar($id_user,$nama);
     }
     
+    function hapus_barang_di_list($id_list,$id_barang){
+    $this->db->query("delete from belanja where id_barang = $id_barang and id_list_belanja = $id_list");
+    redirect('preshop/daftar_belanja');
+    }
+    
+    function kosong_list($id){
+    $this->db->query("delete from belanja where id_list_belanja = $id");
+    redirect('preshop/daftar_belanja');
+    }
+    
+    function hapus_list($id){
+    $this->db->query("delete from list_belanja where id_list_belanja = $id");
+    $this->db->query("delete from belanja where id_list_belanja = $id");
+    redirect('preshop/daftar_belanja');
+    }
+    
     function tambah_barang_ke_list($step,$id_barang){
     $site = site_url();
     $base = base_url();
@@ -73,8 +89,17 @@
       $d = $this->db->query("select * from list_belanja where id_list_belanja = $list_belanja");
       $n = $d->row_array();
       $nama_list = $n['nama'];
+      $u = $this->db->query("select * from belanja where id_barang = $id_bar and id_list_belanja = $list_belanja");
+      $row = $u->row_array();
+      if ($u->num_rows() > 0){
+         $jml_skr = $row['jumlah'];
+         $jml = $jml_skr + $jumlah;
+         $this->db->query("update belanja set jumlah = $jml where id_barang = $id_bar and id_list_belanja = $list_belanja");
+         echo "Anda Baru Saja menambahkan lagi $nama_barang dengan Merek $merk kedalam Daftar Belanjaan $nama_list sebanyak $jumlah buah";
+      }else {
       $this->db->query("insert into belanja(id_list_belanja,id_barang,jumlah) values($list_belanja,$id_bar,$jumlah)");
       echo "Anda Baru Saja menambahkan $nama_barang dengan Merek $merk kedalam Daftar Belanjaan $nama_list sebanyak $jumlah buah";
+      }
       }
     }
     

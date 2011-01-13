@@ -1,7 +1,7 @@
 
 body{ 
   background-color: #FFFFFF;
-  background-image: url(http://localhost/preshop/images/bgimage.png);
+  background-image: url(../images/bgimage.png);
   background-position: center top;
   background-repeat: no-repeat;
  
@@ -24,7 +24,7 @@ body{
  position:relative; 
  height:110px;
  background-color: rgba(0,0,0,0);
- background-image: url(http://localhost/preshop/images/headerlogo.png); 
+ background-image: url(../images/headerlogo.png); 
  background-repeat: no-repeat;
  background-position-x: -75px;
  width: auto;
@@ -152,7 +152,8 @@ h1 {
 code {
  font-family: Monaco, Verdana, Sans-serif;
  font-size: 12px;
- background-color: #f9f9f9;text-shadow: 0px 0px 1px #000;
+ background-color: #f9f9f9;
+ text-shadow: 0px 0px 1px #000;
  border: 1px solid #D0D0D0;
  color: #002166;
  display: block;
@@ -340,5 +341,21 @@ span.jPag-snext-img{
     background:transparent url(../images/snext.png) no-repeat center left;
             }
 
-
+.jadi{
+background: url(../images/jadi.png) repeat-y center left;
+padding-top:20px;
+padding-left: 20px;
+padding-bottom: 40px;
+display:block;
+   }
+   
+   .jadi_head{
+   background: url(../images/jadi_head.png)no-repeat;
+   display:block;
+   }
+.jadi_foot{
+   background: url(../images/jadi_foot.png)no-repeat;
+  display:block;
+  }
+   
 

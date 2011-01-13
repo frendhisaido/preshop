@@ -43,8 +43,9 @@
     
       function gen_list($id){
        $this->system_user->check_session(1);
+       $data['id_list_belanja'] = $id;
        $this->load->view('header');
-       $this->load->view('cetak');
+       $this->load->view('cetak',$data);
        $this->load->view('footer');
     }
     
