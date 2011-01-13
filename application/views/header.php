@@ -45,11 +45,6 @@
            echo "class=\"current\"";
           }
           echo ">Daftar Belanja</a></li>";
-           echo "<li><a href=\"$site/preshop/promo\"";
-           if ($now == 'promo'){ 
-           echo "class=\"current\"";
-          }
-          echo ">Promo</a></li>";
           echo "<li><a href=\"$site/preshop/logout\">Logout</a></li>";
          }else echo "<li><a href=\"$site/preshop/login\">Login</a></li>";
          ?>

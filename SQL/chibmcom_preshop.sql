@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 10, 2011 at 12:59 AM
+-- Generation Time: Jan 13, 2011 at 09:25 PM
 -- Server version: 5.1.46
 -- PHP Version: 5.2.13
 
@@ -135,10 +135,11 @@ CREATE TABLE IF NOT EXISTS `belanja` (
 --
 
 INSERT INTO `belanja` (`id_barang`, `id_list_belanja`, `jumlah`) VALUES
-(1, 2, 1),
-(8, 2, 1),
-(8, 2, 10),
-(2, 1, 89);
+(26, 3, 2),
+(27, 4, 2),
+(11, 4, 1),
+(1, 3, 1),
+(8, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -192,15 +193,15 @@ CREATE TABLE IF NOT EXISTS `list_belanja` (
   `nama` varchar(100) NOT NULL,
   `tgl_buat` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_list_belanja`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `list_belanja`
 --
 
 INSERT INTO `list_belanja` (`id_list_belanja`, `id_user`, `nama`, `tgl_buat`) VALUES
-(1, 11, 's', '2011-01-09 19:58:25'),
-(2, 11, 'alfamart', '2011-01-09 19:58:47');
+(4, 11, 'nguk', '2011-01-13 21:17:38'),
+(3, 11, 'indomart', '2011-01-13 20:24:08');
 
 -- --------------------------------------------------------
 
