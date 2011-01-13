@@ -152,7 +152,7 @@ class System_barang extends Model {
 	              echo "<tr align=\"center\"><td><img src=\"$base/csv/gambar/$pict.jpg\" rel=\"$base/csv/gambar/$pict.jpg\" height=\"60px\"></td></tr>\n";
 	              echo "<tr align=\"center\"><td>$merk</td></tr>\n";
 	              echo "<tr align=\"center\"><td>Rp $harga,-</td></tr>\n";
-	              echo "<tr align=\"center\"><td><a id=\"$id_barang\" href=\"$site/lib_preshop/tambah_barang_ke_list/0/$id_barang\" class=\"tanya_belanja\" rel=\"$nama\" title=\"Klik untuk menamhakan <h2>$nama</h2> ke Daftar Belanja\">Tambah ke list</a></td></tr>\n";
+	              echo "<tr align=\"center\"><td><a id=\"$id_barang\" href=\"$site/lib_preshop/tambah_barang_ke_list/0/$id_barang\" class=\"tanya_belanja\" rel=\"$nama\" title=\"Klik untuk menamhakan <h2>$nama</h2> ke Daftar Belanja\"><span>Tambah</span></a></td></tr>\n";
 	              echo "</table>\n";
 	              echo "</td>\n";
 	              $a++;
@@ -164,7 +164,7 @@ class System_barang extends Model {
 	              echo "<tr align=\"center\"><td><img src=\"$base/csv/gambar/$pict.jpg\" rel=\"$base/csv/gambar/$pict.jpg\" height=\"60px\"></td></tr>\n";
 	              echo "<tr align=\"center\"><td>$merk</td></tr>\n";
 	              echo "<tr align=\"center\"><td>Rp $harga,-</td></tr>\n";
-	              echo "<tr align=\"center\"><td><a id=\"$id_barang\" href=\"$site/lib_preshop/tambah_barang_ke_list/0/$id_barang\" class=\"tanya_belanja\" rel=\"$nama\" title=\"Klik untuk menamhakan <h2>$nama</h2> ke Daftar Belanja\">Tambah ke list</a></td></tr>\n";
+	              echo "<tr align=\"center\"><td><a id=\"$id_barang\" href=\"$site/lib_preshop/tambah_barang_ke_list/0/$id_barang\" class=\"tanya_belanja\" rel=\"$nama\" title=\"Klik untuk menamhakan <h2>$nama</h2> ke Daftar Belanja\"><span>Tambah<span></a></td></tr>\n";
 	              echo "</table>\n";
 	              echo "</td>\n";
 	              echo "</tr>\n";

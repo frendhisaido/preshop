@@ -1,16 +1,26 @@
-<div id="content">
-	<div id="maincol">
-	   <h1>Login</h1>
-	   Untuk dapat menggunakan semua fitur yang ada didalam preshop ini login lah terlebih dahulu
-	   <br><br>
-	   <form action="<?php echo site_url();?>/lib_preshop/login" method="POST">
-	   <table cellpadding="5">
-	     <tr><td>Username</td><td>:</td><td><input class="input" type="text" name="username"></td></tr>
-	     <tr><td>Password</td><td>:</td><td><input class="input" type="password" name="password"></td></tr>
-	     <tr><td></td><td></td><td><input type="submit" value="Login"></td></tr>
-	   </table>
+
+ <form action="<?php echo site_url();?>/lib_preshop/login" method="POST">
+ 
+       <div class="grid_12 shadow column">   
+       <h1>Login</h1>        
+  
+       <div class="grid_3 prefix_4 suffix_7 ">
+       <div class="grid_3">
+       <input class="inputbox column usernamebox" type="text" name="username">
+       </div>
+       <div class="grid_3">
+       <input class="inputbox column passwordbox" type="password" name="password">        
+       <div style="font-size: 10px;">Tekan ENTER untuk submit.</div> 
+       </div> 
+       <div class="grid_3">
+       <input class="submitbutton" type="submit" value=" ">
+       </div>
+       </div>
+       
+       </div>      
+       
+	     
 	   </form>
-	</div>
-	</div>
+
 		
 	

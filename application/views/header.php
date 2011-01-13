@@ -1,8 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Sebelumbelanja.com</title>
 <link rel="icon" href="<?php echo base_url();?>images/logo.png" type="image/png" />
-<link rel="stylesheet" href="<?php echo base_url();?>css/home_style.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo base_url();?>css/reset.css" />
+<link rel="stylesheet" href="<?php echo base_url();?>css/text.css" />
+<link rel="stylesheet" href="<?php echo base_url();?>css/960.css" />
+<link rel="stylesheet" href="<?php echo base_url();?>css/default.css" />
 <link rel="stylesheet" href="<?php echo base_url();?>css/south-street/jquery.ui.css" type="text/css" />
 <script src="<?php echo base_url()?>js/jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url()?>js/jquery.ui.js" type="text/javascript"></script>
@@ -14,11 +19,13 @@
 <script src="<?php echo base_url()?>js/tooltip.js" type="text/javascript"></script>
 </head>
 <body>
-<div id="container" >
-  <div id="wrapper" class="clearfix">
-	<div id="header">
-	  <div id="menus">
-        <ul>
+
+  <div id="container" class="container_12 clearfix">
+  <!--header-->  
+    <img class="the_header" src="<?php echo base_url();?>images/headerlogo.png"/>  
+    
+	<div id="menus" class="grid_12">
+    <ul>
           <?php
           $now = $this->uri->segment(2);
           ?>
@@ -55,12 +62,6 @@
          ?>
          <li><a href="<?php echo site_url(); ?>/preshop/tentang" <?php if ($now == 'tentang'){ echo "class=\"current\"";}?>>Tentang kami.</a></li>
         </ul>     
-      </div>
-	</div>
-	  <?php
-	   if ($id != ''){
-	    $query = $this->db->query("select * from user where id_user = $id");
-	    $row = $query->row();
-	    echo "<h4>Selamat Datang Kembali ".$row->nama."</h4>";
-	    }
-	    ?> 
+    </div>
+    <div class="clear"></div>
+	  
